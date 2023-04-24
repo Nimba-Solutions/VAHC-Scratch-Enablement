@@ -1,0 +1,28 @@
+minimum_cumulusci_version: '3.68.1'
+project:
+    name: VAHC-Scratch-Enablement
+    package:
+        name: VAHC-Scratch-Enablement
+        api_version: '55.0'
+    git:
+        default_branch: 'main'
+        prefix_feature: 'feature/'
+        prefix_beta: 'beta/'
+        prefix_release: 'release/'
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/VAHC-Scratch-Enablement/tests
+            options:
+                outputdir: robot/VAHC-Scratch-Enablement/results
+
+    robot_testdoc:
+        options:
+            path: robot/VAHC-Scratch-Enablement/tests
+            output: robot/VAHC-Scratch-Enablement/doc/VAHC-Scratch-Enablement_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
